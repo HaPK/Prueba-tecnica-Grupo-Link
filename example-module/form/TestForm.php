@@ -60,10 +60,16 @@ class TestForm extends FormBase {
             $form_state->setErrorByName('identificacion',$this->t('Es necesario introducir un número de identificación'));
         }
         if (empty($form_state->getValue('fecha_nacimiento'))){
-            $form_state->setErrorByName('nombre',$this->t('Es necesario introducir una fecha en el formato AAAA-MM-DD'));
+            $form_state->setErrorByName('fecha_nacimiento',$this->t('Es necesario introducir una fecha en el formato AAAA-MM-DD'));
         }
         if (empty($form_state->getValue('cargo'))){
             $form_state->setErrorByName('nombre',$this->t('Por favor seleccione al menos un cargo'));
+        }
+        if(!preg_match('/^[A-Za-z]+$/',$form_state->getValue('nombre'))){
+            $form_state->setErrorByName('nombre',$this->t('Por favor solo use letras para el nombre'));
+        }
+        if(!preg_match('/^[0-9]+$/',$form_state->getValue('identificacion'))){
+            $form_state->setErrorByName('identificacion',$this->t('Por favor solo use números para su identificacion'));
         }
     }
 
