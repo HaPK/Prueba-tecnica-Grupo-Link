@@ -1,0 +1,7 @@
+example_module.content:
+    path: '/example-module/form'
+    defaults:
+        _title: 'Formulario'
+        _form: '\Drupal\example-module\form\TestForm'
+    requirements:
+        _permission: 'access content'

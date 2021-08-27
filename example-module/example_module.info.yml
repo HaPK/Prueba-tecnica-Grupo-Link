@@ -1,0 +1,6 @@
+name: Example Module
+description: Módulo que crea un formulatrio, para la prueba técnica del Grupo Link
+package: Custom
+
+type: module
+core: 8.x

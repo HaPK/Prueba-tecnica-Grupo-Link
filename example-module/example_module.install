@@ -1,0 +1,53 @@
+<?php
+use Drupal\Core\Database\Database;
+/**
+ * Implements hook_schema().
+ * @ingroup example-module
+ */
+function example_module_schema() {
+    $schema['example-users'] = array(
+        'description' => 'Tabla con información de usuarios de example-module.',
+        'fields' => array(
+            'id' => array(
+                'description' => '',
+                'type' => 'serial',
+                'unsigned' => TRUE,
+                'not null' => TRUE,
+            ),
+            'nombre' => array(
+                'description' => 'Nombre del usuario',
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE,
+                'default' => '',
+            ),
+            'identificacion' => array(
+                'description' => 'Número de identificación',
+                'type' => 'varchar',
+                'length' => 20,
+                'not null' => TRUE,
+                'default' => '',
+            ),
+            'fecha_nacimiento' => array(
+                'description' => 'Fecha de nacimiento',
+                'type' => 'date',
+                'not null' => TRUE,
+                'default' => '',
+            ),
+            'cargo' => array(
+                'description' => 'Cargo del usuario',
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE,
+                'default' => '',
+            ),
+            'estado' => array(
+                'description' => 'Estado del usuario',
+                'type' => 'byte',
+                'not null' => TRUE,
+                'default' => '0',
+            ),
+        ),
+        'primary key' => array('id'),
+    );
+}
